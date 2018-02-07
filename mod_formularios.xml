@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+	<name>MOD_FORMULARIOS</name>
+	<author>@Javi_Mata</author>
+	<creationDate>January 2015</creationDate>
+	<copyright>Copyright (C) 2015 - All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>javimata@gmail.com</authorEmail>
+	<authorUrl>www.javimata.com</authorUrl>
+	<version>1.0.1</version>
+	<description>MOD_FORMULARIOS_XML_DESCRIPTION</description>
+
+	<files>
+		<filename module="mod_formularios">mod_formularios.php</filename>
+		<filename>helper.php</filename>
+		<filename>js/scripts.js</filename>
+		<filename>css/style.css</filename>
+		<filename>bin/process.php</filename>
+		<folder>bin</folder>
+		<folder>css</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>tmpl</folder>
+		<folder>language</folder>
+	</files>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_formularios.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_formularios.sys.ini</language>
+		<language tag="es-ES">es-ES/es-ES.mod_formularios.ini</language>
+		<language tag="es-ES">es-ES/es-ES.mod_formularios.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				
+				<field name="header" type="list" label="COM_MODULES_FIELD_HEADER_TAG_LABEL" description="COM_MODULES_FIELD_HEADER_TAG_DESC" default="h3">
+				  <option value="h1">H1</option>
+				  <option value="h2">H2</option>
+				  <option value="h3">H3</option>
+				  <option value="h4">H4</option>
+				  <option value="h5">H5</option>
+				  <option value="h6">H6</option>
+				  <option value="p">P</option>
+				</field>
+
+				<field name="titulo" type="text" default="" filter="raw" label="MOD_FORMULARIOS_FIELD_TITLE_LABEL" description="MOD_FORMULARIOS_FIELD_TITLE_DESC" />
+
+				<field name="texto" type="textarea" default="" filter="raw" label="MOD_FORMULARIOS_FIELD_TEXT_LABEL" description="MOD_FORMULARIOS_FIELD_TEXT_DESC" />
+
+				<field name="subtexto" type="textarea" default="" filter="raw" label="MOD_FORMULARIOS_FIELD_SUBTEXT_LABEL" description="MOD_FORMULARIOS_FIELD_SUBTEXT_DESC" />
+
+				<field name="texto_btn" type="text" default="" label="MOD_FORMULARIOS_FIELD_TEXT_BTN_LABEL" description="MOD_FORMULARIOS_FIELD_TEXT_BTN_DESC" />
+				<field name="imagen" type="media" directory="" />
+
+				<field type="spacer" name="myspacer" hr="true" />
+
+				<field name="descargar_archivo" class="btn-group btn-group-yesno" buttons="true" type="radio" default="0" label="MOD_FORMULARIOS_FIELD_DOWNLOAD_FILE_LABEL" description="MOD_FORMULARIOS_FIELD_DOWNLOAD_FILE_DESC">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+
+				<field name="archivo_descargable" type="filelist" default="" label="MOD_FORMULARIOS_FIELD_DOWNLOAD_SELECT_FILE_LABEL" description="MOD_FORMULARIOS_FIELD_DOWNLOAD_SELECT_FILE_DESC" directory="images" filter="\.pdf$|\.doc$|\.xls$|\.zip$|\.PDF$|\.DOC$|\.XML$|\.ZIP$|\.docx$|\.xlsx$" hide_default="true" />
+
+				<field name="url_file" type="text" default="" label="Url del archivo" />
+
+				<field name="texto_descarga" type="text" default="" label="Texto de descarga" />
+
+				<field name="texto_btn_descarga" type="text" default="" label="Texto botón de descarga" />
+
+				<field name="verifica_cookie" class="btn-group btn-group-yesno" buttons="true" type="radio" default="0" label="Verificar Cookie">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+
+				<field name="notaArchivos" type="note" class="alert alert-info" label="MOD_FORMULARIOS_FIELD_DOWNLOAD_FILE_NOTE_LABEL" description="MOD_FORMULARIOS_FIELD_DOWNLOAD_FILE_NOTE_DESC" />
+
+
+				<field type="spacer" name="spacer-basic" label="" />
+
+			</fieldset>
+
+			<fieldset name="envio" label="MOD_FORMULARIOS_TAB_ENVIO">
+
+				<field name="modoTest" class="btn-group btn-group-yesno" buttons="true" type="radio" default="0" label="MOD_FORMULARIOS_FIELD_TESTMODE_LABEL" description="MOD_FORMULARIOS_FIELD_TESTMODE_DESC">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+
+				<field name="email-test" type="text" default="" label="MOD_FORMULARIOS_FIELD_TESTMODE_EMAIL_LABEL" description="MOD_FORMULARIOS_FIELD_TESTMODE_EMAIL_DESC"/>
+		
+				<field name="UsaJQuery" class="btn-group btn-group-yesno" buttons="true" type="radio" default="0" label="MOD_FORMULARIOS_FIELD_JQUERY_LABEL" description="MOD_FORMULARIOS_FIELD_JQUERY_DESC">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>		
+
+				<field name="enviar_email" class="btn-group btn-group-yesno" buttons="true" type="radio" default="0" label="MOD_FORMULARIOS_FIELD_SENDEMAIL_LABEL" description="MOD_FORMULARIOS_FIELD_SENDEMAIL_DESC">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+
+				<field name="titulo_email" type="text" default="" label="MOD_FORMULARIOS_FIELD_EMAIL_TITLE_LABEL" description="MOD_FORMULARIOS_FIELD_EMAIL_TITLE_DESC"/>
+
+				<field name="texto_ok" type="text" default="" label="MOD_FORMULARIOS_FIELD_TEXT_OK_LABEL" description="MOD_FORMULARIOS_FIELD_TEXT_OK_DESC"/>
+
+				<field name="texto_error" type="text" default="" label="MOD_FORMULARIOS_FIELD_TEXT_ERROR_LABEL" description="MOD_FORMULARIOS_FIELD_TEXT_ERROR_DESC"/>
+
+				<field name="email_envio" type="text" default="" label="MOD_FORMULARIOS_FIELD_EMAIL_SEND_LABEL" description="MOD_FORMULARIOS_FIELD_EMAIL_SEND_DESC"/>
+
+				<field name="email_cc" type="text" default="" label="MOD_FORMULARIOS_FIELD_EMAIL_SEND_CC_LABEL" description="MOD_FORMULARIOS_FIELD_EMAIL_SEND_CC_DESC"/>
+
+				<field name="email_bcc" type="text" default="" label="MOD_FORMULARIOS_FIELD_EMAIL_SEND_BCC_LABEL" description="MOD_FORMULARIOS_FIELD_EMAIL_SEND_BCC_DESC"/>
+
+
+				<field name="enviar_gracias" class="btn-group btn-group-yesno" buttons="true" type="radio" default="0" label="MOD_FORMULARIOS_FIELD_EMAIL_SEND_THANKS_LABEL" description="MOD_FORMULARIOS_FIELD_EMAIL_SEND_THANKS_DESC">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+
+				<field name="titulo_email_gracias" type="text" default="" label="MOD_FORMULARIOS_FIELD_EMAIL_SEND_THANKS_TITLE_LABEL" description="MOD_FORMULARIOS_FIELD_EMAIL_SEND_THANKS_TITLE_DESC"/>
+
+				<field type="spacer" name="spacer-envio" label="" />
+
+			</fieldset>
+
+			<fieldset name="campos" label="MOD_FORMULARIOS_TAB_CAMPOS">
+
+				<field name="campo_nombre" filter="raw" type="textarea" default="Nombre|text|||1|&#13;&#10;Email|email|||1" label="MOD_FORMULARIOS_FIELD_FIELDS_LABEL" description="MOD_FORMULARIOS_FIELD_FIELDS_DESC" class="span12" rows="15" cols="100"/>
+
+				<field name="notaCampos" type="note" class="alert alert-info" label="MOD_FORMULARIOS_FIELD_FIELDS_CONFIG_LABEL" description="Separa un campo por linea usando la sintaxis:&lt;br&gt;&lt;br&gt;
+				&lt;em&gt;NombreCampo|TipoCampo|Valor|Clase CSS|Obligatorio|Placeholder|Mensaje de error&lt;/em&gt;&lt;br&gt;&lt;br&gt;
+				&lt;b&gt;NombreCampo&lt;/b&gt; será el texto a mostrar tipo: Nombre, Email, etc&lt;br&gt;
+				&lt;b&gt;TipoCampo&lt;/b&gt; &lt;em&gt;(opciones)&lt;/em&gt; text, email, select, textarea, component, checkbox, radio, boton, title&lt;br&gt;
+				&lt;b&gt;Valor&lt;/b&gt; Será el texto de valor, si el tipo es select separar las opciones con una coma (,) ej opcion 1,opcion 2, opcion 3&lt;br&gt;
+				&lt;b&gt;Clase&lt;/b&gt; Si se desea agregar una clase al contenedor del campo&lt;br&gt;
+				&lt;b&gt;Obligatorio&lt;/b&gt; &lt;em&gt;(opciones)&lt;/em&gt; 1|0 (1=si, 0=no)&lt;br&gt;
+				&lt;b&gt;Placeholder&lt;/b&gt; (Opcional) Titulo visible del campo, si se deja vacio se utiliza el nombre del campo como titulo&lt;br&gt;
+				&lt;b&gt;Mensaje de error&lt;/b&gt; (Opcional) Mensaje de error en campos obligatorios&lt;br&gt;
+				" />
+
+				<field name="fields_container_class" type="text" default="" label="Class contenedor de campos" />
+
+				<field name="container_btn_class" type="text" default="" label="Class contenedor de Botón" />
+
+				<field name="btn_class" type="text" default="" label="Class del botón" />
+
+				<field name="agrega_captcha" class="btn-group btn-group-yesno" buttons="true" type="radio" default="0" label="Agrega Captcha" description="Se debe activar el plugin de Google reCaptcha, además de agregar las claves solicitadas en el plugin">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+
+				<field name="container_captcha_class" type="text" default="" label="Class contenedor de Captcha" showon="agrega_captcha:1" />
+
+				<field name="muestra_error" class="btn-group btn-group-yesno" buttons="true" type="radio" default="1" label="MOD_FORMULARIOS_FIELD_SHOW_ERRORS_LABEL" description="MOD_FORMULARIOS_FIELD_SHOW_ERRORS_DESC">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+
+				<field name="tipo_etiqueta" type="list" default="1" label="MOD_FORMULARIOS_FIELD_LABEL_TYPE_LABEL" description="MOD_FORMULARIOS_FIELD_LABEL_TYPE_DESC">
+				  <option value="1">MOD_FORMULARIOS_FIELD_LABEL_TYPE_OPTION1</option>
+				  <option value="2">MOD_FORMULARIOS_FIELD_LABEL_TYPE_OPTION2</option>
+				  <option value="3">MOD_FORMULARIOS_FIELD_LABEL_TYPE_OPTION3</option>
+				</field>
+
+				<field name="requiere_aviso" class="btn-group btn-group-yesno" buttons="true" type="radio" default="0" label="MOD_FORMULARIOS_FIELD_PRIVACY_LABEL" description="MOD_FORMULARIOS_FIELD_PRIVACY_DESC">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+
+				<field name="texto_aviso" type="text" default="" label="MOD_FORMULARIOS_FIELD_PRIVACY_TEXT_LABEL" description="MOD_FORMULARIOS_FIELD_PRIVACY_TEXT_DESC"/>
+				<field name="texto_requerido" type="text" default="*" label="MOD_FORMULARIOS_FIELD_REQUERIDO_TEXT_LABEL" description="MOD_FORMULARIOS_FIELD_REQUERIDO_TEXT_DESC"/>
+
+				<field name="link_aviso" type="text" default="" label="MOD_FORMULARIOS_FIELD_PRIVACY_LINK_LABEL" description="MOD_FORMULARIOS_FIELD_PRIVACY_LINK_DESC"/>
+
+				<field type="spacer" name="spacer-campos" label="" />
+
+			</fieldset>
+
+			<fieldset name="mailchimp" label="MOD_FORMULARIOS_TAB_MAILCHIMP">
+
+				<field name="mailchimp" class="btn-group btn-group-yesno" buttons="true" type="radio" default="0" label="MOD_FORMULARIOS_FIELD_ADD_MAILCHIMP_LABEL" description="MOD_FORMULARIOS_FIELD_ADD_MAILCHIMP_DESC">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+
+				<field name="mailchimp_key" type="text" default="" label="MOD_FORMULARIOS_FIELD_MAILCHIMP_KEY_LABEL" description="MOD_FORMULARIOS_FIELD_MAILCHIMP_KEY_DESC" showon="mailchimp:1" />
+
+				<field name="mailchimp_id_list" type="text" default="" label="MOD_FORMULARIOS_FIELD_MAILCHIMP_ID_LIST_LABEL" description="MOD_FORMULARIOS_FIELD_MAILCHIMP_ID_LIST_DESC" showon="mailchimp:1" />
+
+				<field type="spacer" name="spacer-mailchimp" label="" />
+
+			</fieldset>
+
+			<fieldset name="analytics_section" label="Google Analytics">
+
+				<field name="integra_analytics" class="btn-group btn-group-yesno" buttons="true" type="radio" default="0" label="Integra Google Analytics" description="Integra los eventos de Google Analytics al envío del formulario">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+
+				<field name="analytics_version" class="btn-group btn-group-yesno" buttons="true" type="list" default="1" label="Versión de Google Analytics" description="Selecciona la versión del script de Google Analytics" showon="integra_analytics:1">
+				  <option value="1">Versión 1 ( _gaq )</option>
+				  <option value="2">Versión 2 ( ga )</option>
+				  <option value="3">Versíon 3 ( gtag )</option>
+				</field>
+
+				<field name="analytics_categoria" type="text" default="" label="Categoría" showon="integra_analytics:1" />
+				<field name="analytics_accion" type="text" default="" label="Acción" showon="integra_analytics:1" />
+				<field name="analytics_etiqueta" type="text" default="" label="Etiqueta" showon="integra_analytics:1" />
+
+				<field type="spacer" name="spacer-analytics" label="" />
+
+			</fieldset>
+
+
+			<fieldset name="advanced">
+
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field name="className" type="text" default="" label="MOD_FORMULARIOS_FIELD_CLASS_LABEL" description="MOD_FORMULARIOS_FIELD_CLASS_DESC" />
+
+				<field name="idName" type="text" default="" label="MOD_FORMULARIOS_FIELD_ID_LABEL" description="MOD_FORMULARIOS_FIELD_ID_DESC" />
+
+			</fieldset>
+
+		</fields>
+
+	</config>
+</extension>
