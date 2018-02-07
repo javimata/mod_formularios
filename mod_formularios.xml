@@ -2,8 +2,8 @@
 <extension type="module" version="3.1.0" client="site" method="upgrade">
 	<name>MOD_FORMULARIOS</name>
 	<author>@Javi_Mata</author>
-	<creationDate>January 2015</creationDate>
-	<copyright>Copyright (C) 2015 - All rights reserved.</copyright>
+	<creationDate>January 2018</creationDate>
+	<copyright>Copyright (C) 2018 - All rights reserved.</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authorEmail>javimata@gmail.com</authorEmail>
 	<authorUrl>www.javimata.com</authorUrl>
