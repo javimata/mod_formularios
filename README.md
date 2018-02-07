@@ -26,8 +26,8 @@ textarea
 select  
 estados  
 component  
-checkbox 
-radio 
-title 
+checkbox  
+radio   
+title  
 hidden  
 boton  
