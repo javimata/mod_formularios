@@ -3,7 +3,7 @@
 ### Author: @Javi_Mata
 
 # Documentacion (ES)
-> Los campos y opciones permitidas son:<br>
+> Los campos y opciones permitidas son:  
 > *NombreCampo|TipoCampo|Valor|Clase CSS|Obligatorio|Placeholder|Mensaje de error*
 
 
