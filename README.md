@@ -8,7 +8,7 @@
 
 
 | Opciones          | Default   | Valores permitidos | Descripción |
-| ----------------- |:---------:| -----:| -----:|
+| ----------------- |:---------:|:-----:|:-----|
 | NombreCampo       |           | String | Es el nombre del campo a tomar en JS |
 | TipoCampo         |           | *text, email, date, time, textarea, select, estados, component, checkbox, radio, title, hidden, boton* | Se debe seleccionar un solo tipo de campo, más adelante se explican las opciones para cada uno de ellos |
 | Valor             |           | String | Agrega un valor predefinido al campo (opcional) |
