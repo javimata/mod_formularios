@@ -119,5 +119,17 @@
 
         return $categoriesTree;
     }
+
+    private function _getFields( $content ) 
+    {
+
+        /* 
+         * Funcion BETA para la toma de campos con shortcodes []
+         */
+
+        // $pattern = '/\{jForm\}(.*?)\{\/jForm\}/s';
+        
+    }
+
    
 }
