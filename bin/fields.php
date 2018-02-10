@@ -1,6 +1,6 @@
 <?php
 
-    $contenido = 'Aqui iria el contenido {jForm opt1="hola" opt2="test"} de prueba {jForm test} test.';
+    $contenido = 'Aqui iria el contenido {jForm type="text" value="nombre"} de prueba {jForm test} test.';
 
     $regex = '/{jForm\s(.*?)}/i';
 
