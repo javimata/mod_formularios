@@ -62,14 +62,12 @@ $app     			= JFactory::getApplication();
 $menu 	 			= $app->getMenu();
 $seccion 			= $menu->getActive()->title;
 
-if ( $attribs['producto'] ) {
-	$seccion = $attribs['producto'];
-}
-
 
 // Checa si exiten atributos para el nombre del producto y sustituye el shortcode
-if ( $attribs['producto'] ) {
+if ( isset($attribs['producto']) && $attribs['producto'] ) {
 	$producto = $attribs['producto'];
+} else {
+	$producto = $seccion;
 }
 
 //Cambio de tags
@@ -94,6 +92,10 @@ if ( $descargar_archivo == 1 ) {
 if ( $verifica_cookie == 1 && $urlArchivo != "" ) {
 
 	$cookie_name = md5($modulo_id);
+
+} else {
+
+	$cookie_name = "";
 
 }
 
